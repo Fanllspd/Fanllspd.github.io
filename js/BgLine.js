@@ -1,1 +1,126 @@
-!function(){function n(n,e,t){return n.getAttribute(e)||t}function e(n){return document.getElementsByTagName(n)}function t(){l=c.width=window.innerWidth||document.documentElement.clientWidth||document.body.clientWidth,m=c.height=window.innerHeight||document.documentElement.clientHeight||document.body.clientHeight}function o(){return Math.random()}function u(){r.clearRect(0,0,l,m);var e,t,o,i,c,n,a=[x].concat(y);y.forEach(function(n){for(n.x+=n.xa,n.y+=n.ya,n.xa*=n.x>l||n.x<0?-1:1,n.ya*=n.y>m||n.y<0?-1:1,r.fillRect(n.x-.5,n.y-.5,1,1),t=0;t<a.length;t++)(e=a[t])!==n&&null!==e.x&&null!==e.y&&(o=n.x-e.x,i=n.y-e.y,(c=o*o+i*i)<e.max)&&(e===x&&c>=e.max/2&&(n.x-=.03*o,n.y-=.03*i),o=(e.max-c)/e.max,r.beginPath(),r.lineWidth=o/2,r.strokeStyle="rgba("+d.c+","+(.2+o)+")",r.moveTo(n.x,n.y),r.lineTo(e.x,e.y),r.stroke())}),a.splice(a.indexOf(x),1),n=u,window.requestAnimationFrame(n)||window.webkitRequestAnimationFrame(n)||window.mozRequestAnimationFrame(n)||window.oRequestAnimationFrame(n)||window.msRequestAnimationFrame(n)}var l,m,i,c=document.createElement("canvas"),d=(a=(i=e("script")).length,i=i[a-1],{l:a,z:n(i,"zIndex",-1),o:n(i,"opacity",.5),c:n(i,"color","0,0,0"),n:n(i,"count",99)}),a="c_n"+d.l,r=c.getContext("2d"),x={x:null,y:null,max:2e4};c.id=a,c.style.cssText="position:fixed;top:0;left:0;z-index:"+d.z+";opacity:"+d.o,e("body")[0].appendChild(c),t(),window.onresize=t,window.onmousemove=function(n){n=n||window.event,x.x=n.clientX,x.y=n.clientY},window.onmouseout=function(){x.x=null,x.y=null};for(var y=[],w=0;w</0?-1:1,r.fillRect(n.x-.5,n.y-.5,1,1),t=0;t<a.length;t++)(e=a[t])!==n&&null!==e.x&&null!==e.y&&(o=n.x-e.x,i=n.y-e.y,(c=o*o+i*i)<e.max)&&(e===x&&c></0?-1:1,n.ya*=n.y>
+!(function () {
+  function o(w, v, i) {
+    return w.getAttribute(v) || i
+  }
+
+  function j(i) {
+    return document.getElementsByTagName(i)
+  }
+
+  function l() {
+    var i = j('script'),
+      w = i.length,
+      v = i[w - 1]
+    return {
+      l: w,
+      z: o(v, 'zIndex', -1),
+      o: o(v, 'opacity', 0.5),
+      c: o(v, 'color', '0,0,0'),
+      n: o(v, 'count', 130),
+    }
+  }
+
+  function k() {
+    ;(r = u.width =
+      window.innerWidth ||
+      document.documentElement.clientWidth ||
+      document.body.clientWidth),
+      (n = u.height =
+        window.innerHeight ||
+        document.documentElement.clientHeight ||
+        document.body.clientHeight)
+  }
+
+  function m(i) {
+    window.requestAnimationFrame(i) ||
+      window.webkitRequestAnimationFrame(i) ||
+      window.mozRequestAnimationFrame(i) ||
+      window.oRequestAnimationFrame(i) ||
+      window.msRequestAnimationFrame(i) ||
+      function (i) {
+        window.setTimeout(i, 1000 / 45)
+      }
+  }
+
+  function a() {
+    return Math.random()
+  }
+
+  function b() {
+    e.clearRect(0, 0, r, n)
+    var w = [f].concat(t),
+      x,
+      v,
+      A,
+      B,
+      z,
+      y
+    t.forEach(function (i) {
+      i.x += i.xa
+      i.y += i.ya
+      i.xa *= i.x > r || i.x < 0 ? -1 : 1
+      i.ya *= i.y > n || i.y < 0 ? -1 : 1
+      e.fillRect(i.x - 0.5, i.y - 0.5, 1, 1)
+
+      for (v = 0; v < w.length; v++) {
+        x = w[v]
+        if (x !== i && null !== x.x && null !== x.y) {
+          B = i.x - x.x
+          z = i.y - x.y
+          y = B * B + z * z
+          y < x.max &&
+            (x === f &&
+              y >= x.max / 2 &&
+              ((i.x -= 0.03 * B), (i.y -= 0.03 * z)),
+            (A = (x.max - y) / x.max),
+            e.beginPath(),
+            (e.lineWidth = A / 2),
+            (e.strokeStyle = 'rgba(' + s.c + ',' + (A + 0.2) + ')'),
+            e.moveTo(i.x, i.y),
+            e.lineTo(x.x, x.y),
+            e.stroke())
+        }
+      }
+    })
+    w.splice(w.indexOf(f), 1)
+    m(b)
+  }
+
+  var u = document.createElement('canvas'),
+    s = l(),
+    c = 'c_n' + s.l,
+    e = u.getContext('2d'),
+    r,
+    n,
+    f = { x: null, y: null, max: 20000 }
+
+  u.id = c
+  u.style.cssText =
+    'position:fixed;top:0;left:0;z-index:' + s.z + ';opacity:' + s.o
+  j('body')[0].appendChild(u)
+  k()
+  window.onresize = k
+
+  window.onmousemove = function (i) {
+    i = i || window.event
+    f.x = i.clientX
+    f.y = i.clientY
+  }
+
+  window.onmouseout = function () {
+    f.x = null
+    f.y = null
+  }
+
+  for (var t = [], p = 0; s.n > p; p++) {
+    var h = a() * r,
+      g = a() * n,
+      q = 2 * a() - 1,
+      d = 2 * a() - 1
+    t.push({ x: h, y: g, xa: q, ya: d, max: 6000 })
+  }
+
+  setTimeout(function () {
+    b()
+  }, 100)
+})()
