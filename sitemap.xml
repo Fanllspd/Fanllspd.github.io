@@ -2,15 +2,6 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
-    <loc>https://fanllspd.com/google34163fab5aa4fc31.html</loc>
-    
-    <lastmod>2024-01-30</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
     <loc>https://fanllspd.com/posts/43716/</loc>
     
     <lastmod>2024-01-18</lastmod>
@@ -117,7 +108,7 @@
   </url>
   
   <url>
-    <loc>https://fanllspd.com/tags/CTF-Recruits/</loc>
+    <loc>https://fanllspd.com/tags/iCoding/</loc>
     <lastmod>2024-01-30</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -131,7 +122,7 @@
   </url>
   
   <url>
-    <loc>https://fanllspd.com/tags/iCoding/</loc>
+    <loc>https://fanllspd.com/tags/CTF-Recruits/</loc>
     <lastmod>2024-01-30</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
