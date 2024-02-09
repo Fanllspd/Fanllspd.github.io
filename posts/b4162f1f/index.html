@@ -551,19 +551,20 @@
         )
         
         // console.log(111);
-        Waline.init(options);
+        Waline.init(options); 
+        fetch('https://api.xygeng.cn/One')
+          .then((response) => response.json())
+          .then((data) => {
+            // console.log(111);
+            document.getElementById("wl-edit").placeholder = `${data.data.content}--${data.data.origin}`
+          })
+          .catch(console.error)
         Fluid.utils.waitElementVisible('#waline .vcontent', () => {
           var imgSelector = '#waline .vcontent img:not(.vemoji)';
           Fluid.plugins.imageCaption(imgSelector);
           Fluid.plugins.fancyBox(imgSelector); 
-          console.log(111);
-          fetch('https://api.xygeng.cn/One')
-            .then((response) => response.json())
-            .then((data) => {
-              console.log(111);
-              document.getElementById("wl-edit").placeholder = `${data.data.content}--${data.data.origin}`
-            })
-            .catch(console.error)
+          // console.log(111);
+          
         })
       });
     });
