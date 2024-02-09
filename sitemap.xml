@@ -128,13 +128,6 @@
 
   
   <url>
-    <loc>https://fanllspd.com/tags/Block-Chain/</loc>
-    <lastmod>2024-02-09</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
     <loc>https://fanllspd.com/tags/CTF/</loc>
     <lastmod>2024-02-09</lastmod>
     <changefreq>weekly</changefreq>
@@ -142,14 +135,21 @@
   </url>
   
   <url>
-    <loc>https://fanllspd.com/tags/Summary/</loc>
+    <loc>https://fanllspd.com/tags/CTF-Recruits/</loc>
     <lastmod>2024-02-09</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
-    <loc>https://fanllspd.com/tags/CTF-Recruits/</loc>
+    <loc>https://fanllspd.com/tags/Block-Chain/</loc>
+    <lastmod>2024-02-09</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://fanllspd.com/tags/Summary/</loc>
     <lastmod>2024-02-09</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
