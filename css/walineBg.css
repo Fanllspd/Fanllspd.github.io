@@ -1,16 +1,1 @@
-.wl-editor {
-    background-image: url(../img/walineBg.gif) !important;/*https://cdn.jsdelivr.net/gh/drew233/cdn/20200409110727.webp);*/
-    /* background-size: contain !important; */
-    background-size: 100px 100px !important;
-    background-repeat: no-repeat !important;
-    background-position: right 2.5% bottom 0 !important;
-    /* background-color: rgba(255, 255, 255, 0) !important; */
-    /* resize: vertical !important; */
-    transition: all 0.3s cubic-bezier(0.42, 0, 0.76, 1.02) 0s, 
-        background-position-x 0.5s cubic-bezier(0.42, 0, 0.2, 1.21) 0s !important;
-}
-
-.wl-editor:focus {
-    background-position-x: 1500px !important;
-    background-size: 10px 56px !important;
-}
+.wl-editor{background-image:url(../img/walineBg.gif)!important;background-size:100px 100px!important;background-repeat:no-repeat!important;background-position:right 2.5% bottom 0!important;transition:all .3s cubic-bezier(.42, 0, .76, 1.02) 0s,background-position-x .5s cubic-bezier(.42, 0, .2, 1.21) 0s!important}.wl-editor:focus{background-position-x:1500px!important;background-size:10px 56px!important}
