@@ -220,43 +220,43 @@
 
   <url>
     <loc>https://fanllspd.com/</loc>
-    <lastmod>2024-06-30</lastmod>
+    <lastmod>2024-07-27</lastmod>
     <changefreq>daily</changefreq>
     <priority>1.0</priority>
   </url>
 
   
   <url>
-    <loc>https://fanllspd.com/tags/Block-Chain/</loc>
-    <lastmod>2024-06-30</lastmod>
+    <loc>https://fanllspd.com/tags/Summary/</loc>
+    <lastmod>2024-07-27</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
-    <loc>https://fanllspd.com/tags/CTF-Recruits/</loc>
-    <lastmod>2024-06-30</lastmod>
+    <loc>https://fanllspd.com/tags/Block-Chain/</loc>
+    <lastmod>2024-07-27</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://fanllspd.com/tags/CTF/</loc>
-    <lastmod>2024-06-30</lastmod>
+    <lastmod>2024-07-27</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
-    <loc>https://fanllspd.com/tags/Summary/</loc>
-    <lastmod>2024-06-30</lastmod>
+    <loc>https://fanllspd.com/tags/CTF-Recruits/</loc>
+    <lastmod>2024-07-27</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://fanllspd.com/tags/iCoding/</loc>
-    <lastmod>2024-06-30</lastmod>
+    <lastmod>2024-07-27</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
@@ -264,15 +264,15 @@
 
   
   <url>
-    <loc>https://fanllspd.com/categories/CTF/</loc>
-    <lastmod>2024-06-30</lastmod>
+    <loc>https://fanllspd.com/categories/life/</loc>
+    <lastmod>2024-07-27</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
-    <loc>https://fanllspd.com/categories/life/</loc>
-    <lastmod>2024-06-30</lastmod>
+    <loc>https://fanllspd.com/categories/CTF/</loc>
+    <lastmod>2024-07-27</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
